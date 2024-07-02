@@ -19,4 +19,16 @@ class PageController extends Controller
         //MANDO TUTTO ALLA PAGINA DI VISUALIZZAZIONE MOVIES
         return view('movies', $data);
     }
+
+    public function getdati()
+    {
+        //SALVO IN UNA VARIABILE TUTTI I DATI CHE MI ARRIVANO DALLA TABELLA MOVIE O MOVIES DEL MIO DB
+        $movies = Movie::all();
+        //SALVO I DATI APPENA PRESI IN UN ARRAY CON INDICE MOVIES
+        $data = [
+            "movies" => $movies
+        ];
+        //MANDO TUTTO ALLA PAGINA DI VISUALIZZAZIONE MOVIES
+        return view('home', $data);
+    }
 }
